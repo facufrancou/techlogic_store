@@ -1,0 +1,347 @@
+<header class="main-header" id="main-header">
+
+    <!-- BARRA DE NAVEGACIÓN DE LA IZQUIERDA -->
+    <nav class="left-navbar">
+        
+        <ul>
+
+            <!-- OPCIÓN PRODUCTOS -->
+            <li class="options-left-navbar">
+                <a href="/products" id="products-option-left-navbar">Productos</a>
+
+                <!-- MENÚ QUE SE DESPLIEGA DE LA OPCIÓN PRODUCTOS -->
+                <div class="second-left-navbar" id="products-second-left-navbar">
+                    <ul>
+                        <li class="second-options-left-navbar"><a href="/products/sectionProducts/:nameSection">Smartphones</a></li>
+                        <li class="second-options-left-navbar"><a href="/products/sectionProducts/:nameSection">Tablets</a></li>
+                        <li class="second-options-left-navbar"><a href="/products/sectionProducts/:nameSection">Laptops y Desktops</a></li>
+                        <li class="second-options-left-navbar"><a href="/products/sectionProducts/:nameSection">Consolas y Gaming</a></li>
+                        <li class="second-options-left-navbar"><a href="/products/sectionProducts/:nameSection">Redes</a></li>
+                        <li class="second-options-left-navbar second-options-left-navbar-with-third-navbar">
+                            <div class="option-left-navbar-with-icon second-options-left-navbar">
+                                <a href="/products/sectionProducts/:nameSection">Accesorios</a>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+                            
+                            <!-- MENÚ QUE SE DESPLIEGA DE LA OPCIÓN ACCESORIOS DE PRODUCTOS -->
+                            <div class="third-left-navbar">
+                                <ul>
+                                    <li class="third-options-left-navbar"><a href="/products/sectionProducts/:nameSection">Fundas</a></li>
+                                    <li class="third-options-left-navbar"><a href="/products/sectionProducts/:nameSection">Teclados</a></li>
+                                    <li class="third-options-left-navbar"><a href="/products/sectionProducts/:nameSection">Mouse</a></li>
+                                    <li class="third-options-left-navbar"><a href="/products/sectionProducts/:nameSection">Altavoces</a></li>
+                                    <li class="third-options-left-navbar"><a href="/products/sectionProducts/:nameSection">Audífonos</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+            <!-- OPCIÓN DESCUBRE -->
+            <li class="options-left-navbar">
+                <a href="#" id="discover-option-left-navbar">Descubre</a>
+
+                <!-- MENÚ QUE SE DESPLIEGA DE LA OPCIÓN DESCUBRE -->
+                <div class="second-left-navbar" id="discover-second-left-navbar">
+                    <ul>
+                        <li class="second-options-left-navbar second-options-left-navbar-with-third-navbar">
+                            <div class="option-left-navbar-with-icon collection-option-left-navbar-with-icon">
+                                <a href="/products/collections">Colecciones</a>
+                                <i class="fa-solid fa-angle-right"></i>
+                            </div>
+
+                            <!-- MENÚ QUE SE DESPLIEGA DE LA OPCIÓN COLECCIONES DE DESCUBRE -->
+                            <div class="third-left-navbar collection-third-left-navbar">
+                                <ul>
+                                    <li class="third-options-left-navbar"><a href="/products/collections/:nameCollection?">Modern</a></li>
+                                    <li class="third-options-left-navbar"><a href="/products/collections/:nameCollection?">Classic</a></li>
+                                    <li class="third-options-left-navbar"><a href="/products/collections/:nameCollection?">Colorful</a></li>
+                                    <li class="third-options-left-navbar"><a href="/products/collections/:nameCollection?">Black & White</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="second-options-left-navbar"><a href="/products/bestSellers">Best Sellers</a></li>
+                        <li class="second-options-left-navbar"><a href="/products/sales">Ofertas</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <!-- OPCIÓN CONTACTO -->
+            <li class="options-left-navbar">
+                <a href="#" id="contact-option-left-navbar">Contacto</a>
+
+                <!-- MENÚ QUE SE DESPLIEGA DE LA OPCIÓN CONTACTO -->
+                <div class="second-left-navbar" id="contact-second-left-navbar">
+                    <ul>
+                        <li class="second-options-left-navbar"><a href="/contact/aboutUs">Acerca de Techlogic.store</a></li>
+                        <li class="second-options-left-navbar"><a href="/contact/payment">Métodos de Pago</a></li>
+                        <li class="second-options-left-navbar"><a href="/contact/questions">Preguntas frecuentes</a></li>
+                        <li class="second-options-left-navbar"><a href="/contact/info">Soporte al Cliente</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <% if (locals.userLogged) { %> 
+                <% if ((locals.userLogged.rolId == 1)) { %>
+                    <li class="options-left-navbar">
+                        <a href="#" id="admin">Admin</a>
+                        
+                        <!-- MENÚ QUE SE DESPLIEGA DE LA OPCIÓN CONTACTO -->
+                        <div class="admin-option second-left-navbar" id="contact-second-left-navbar">
+                            <ul>
+                                <li class="second-options-left-navbar"><a href="/products/create">Crear producto</a></li>
+                                <li class="second-options-left-navbar"><a href="http://localhost:3000/">Dashboard</a></li>
+                            </ul>
+                        </div>
+                    </li>
+            <% } %> 
+            <% } %>
+
+
+        </ul>
+
+    </nav>
+
+    <!-- BURGER MENÚ DE LA VERSIÓN MOBILE -->
+    <div class="burger-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- LOGO -->
+    <div class="logo">
+        <a href="/"><img src="/img/logo.svg" alt="Logo Techlogic.store"></a>
+    </div>
+    
+    <!-- BARRA DE NAVEGACIÓN DE LA DERECHA -->
+    <nav class="right-navbar">
+
+        <ul>
+            <!-- ÍCONO DE LUPA -->
+            <li class="icono-right-navbar icono-search-right-navbar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </li>
+
+            <!-- ÍCONO DE USUARIO -->
+            <li class="icono-right-navbar">
+                <a href="/users/login" id="li-user-icon"><i class="fa-solid fa-user"></i></a>
+
+                <% if (locals.isLogged) { %> 
+
+                    <!-- MENÚ QUE SE DESPLIEGA DEL ÍCONO DEL USUARIO CUANDO YA SE INICIÓ SESIÓN -->
+                    <div class="profile-menu-header profile-menu-full">
+                        <div class="image-profile-menu">
+                            <img src="/img/users/<%= locals.userLogged.image %> " alt="Foto de perfil del usuario">
+                        </div>
+                        <div class="info-profile-menu">
+                            <p><%= locals.userLogged.name %></p>
+                            <p><%= locals.userLogged.email %></p>
+                        </div>
+                        <div class="link-profile-menu">
+                            <a href="/users/profile">Ver perfil...</a>
+                        </div>
+                    </div>
+
+                <% } else { %> 
+                    
+                    <!-- MENÚ QUE SE DESPLIEGA DEL ÍCONO DEL USUARIO CUANDO AÚN NO SE HA INICIADO SESIÓN -->
+                    <div class="profile-menu-header profile-menu-empty">
+                        <a href="/users/login">Ir a Iniciar Sesión...</a>
+                    </div>
+
+                <% } %> 
+                
+            </li>
+
+            <!-- ÍCONO DE CARRITO -->
+            <li class="icono-right-navbar">
+                <a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <!-- BARRA DE BÚSQUEDA -->
+    <div class="search-bar">
+        <form action="/search" method="POST">
+            <div class="inside-search-bar-header">
+                <input type="search" name="search" id="search-header" class="input-search-bar-header" placeholder="Qué estás buscando?">
+                <i class="fa-solid fa-x button-X-search-bar"></i>
+            </div>
+        </form>
+    </div>
+
+    <!-- SLIDE MENÚ DE LA VERSIÓN MOBILE -->
+    <div class="slide-menu">
+
+        <!-- HEADER DEL SLIDE-MENU -->
+        <header class="header-slide-menu">
+            <!-- ÍCONO DE LA X -->
+            <div class="icono-x">
+                <i class="fa-solid fa-x"></i>
+            </div>
+
+            <!-- LOGO -->
+            <img src="/img/logo.svg" alt="Logo de Techlogic.store" class="logo-slide-menu">
+        </header>
+
+        <!-- BARRA DE NAVEGACIÓN DEL SLIDE MENU DE LA VERSIÓN MOBILE -->
+        <nav class="navbar-slide-menu">
+
+            <ul>
+
+                <!-- OPCIÓN PRODUCTOS -->
+                <li class="options-navbar-slide-menu">
+                    <div class="option-navbar-with-icon" id="products-option-slide-menu">
+                        <a href="/products">Productos</a>
+                        <i class="fa-solid fa-plus"></i>
+                        <i class="fa-solid fa-minus icono-menos-slide-menu"></i>
+                    </div>
+
+                    <!-- MENÚ QUE SE DESPLIEGA DE LA OPCIÓN PRODUCTOS -->
+                    <div class="second-navbar-slide-menu" id="second-navbar-products-option-slide-menu">
+                        <ul>
+                            <li><a href="/products/sectionProducts/:nameSection">Smartphones</a></li>
+                            <li><a href="/products/sectionProducts/:nameSection">Tablets</a></li>
+                            <li><a href="/products/sectionProducts/:nameSection">Laptops y Desktops</a></li>
+                            <li><a href="/products/sectionProducts/:nameSection">Consolas y Gaming</a></li>
+                            <li><a href="/products/sectionProducts/:nameSection">Redes</a></li>
+                            <li>
+                                <div class="option-navbar-with-icon" id="accesories-products-option-slide-menu">
+                                    <a href="/products/sectionProducts/:nameSection">Accesorios</a>
+                                    <i class="fa-solid fa-plus"></i>
+                                    <i class="fa-solid fa-minus icono-menos-slide-menu"></i>
+                                </div>
+                                
+                                <!-- MENÚ QUE SE DESPLIEGA DE LA OPCIÓN ACCESORIOS DE PRODUCTOS -->
+                                <div class="third-navbar-slide-menu" id="third-navbar-accesories-products-option-slide-menu">
+                                    <ul>
+                                        <li><a href="/products/sectionProducts/:nameSection">Fundas</a></li>
+                                        <li><a href="/products/sectionProducts/:nameSection">Teclados</a></li>
+                                        <li><a href="/products/sectionProducts/:nameSection">Mouse</a></li>
+                                        <li><a href="/products/sectionProducts/:nameSection">Altavoces</a></li>
+                                        <li><a href="/products/sectionProducts/:nameSection">Audífonos</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- OPCIÓN DESCUBRE -->
+                <li class="options-navbar-slide-menu">
+                    <div class="option-navbar-with-icon" id="discover-option-slide-menu">
+                        <a href="#">Descubre</a>
+                        <i class="fa-solid fa-plus"></i>
+                        <i class="fa-solid fa-minus icono-menos-slide-menu"></i>
+                    </div>
+
+                    <!-- MENÚ QUE SE DESPLIEGA DE LA OPCIÓN DESCUBRE -->
+                    <div class="second-navbar-slide-menu" id="second-navbar-discover-option-slide-menu">
+                        <ul>
+                            <li>
+                                <div class="option-navbar-with-icon" id="collections-products-option-slide-menu">
+                                    <a href="/products/collections">Colecciones</a>
+                                    <i class="fa-solid fa-plus"></i>
+                                    <i class="fa-solid fa-minus icono-menos-slide-menu"></i>
+                                </div>
+
+                                <!-- MENÚ QUE SE DESPLIEGA DE LA OPCIÓN COLECCIONES DE DESCUBRE -->
+                                <div class="third-navbar-slide-menu" id="third-navbar-collections-products-option-slide-menu">
+                                    <ul>
+                                        <li><a href="/products/collections/:nameCollection?">Modern</a></li>
+                                        <li><a href="/products/collections/:nameCollection?">Classic</a></li>
+                                        <li><a href="/products/collections/:nameCollection?">Colorful</a></li>
+                                        <li><a href="/products/collections/:nameCollection?">Black & White</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="/products/bestSellers">Best Sellers</a></li>
+                            <li><a href="/products/sales">Ofertas</a></li>
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- OPCIÓN CONTACTO -->
+                <li class="options-navbar-slide-menu">
+                    <div class="option-navbar-with-icon" id="contact-option-slide-menu">
+                        <a href="#">Contacto</a>
+                        <i class="fa-solid fa-plus"></i>
+                        <i class="fa-solid fa-minus icono-menos-slide-menu"></i>
+                    </div>
+
+                    <!-- MENÚ QUE SE DESPLIEGA DE LA OPCIÓN CONTACTO -->
+                    <div class="second-navbar-slide-menu" id="second-navbar-contact-option-slide-menu">
+                        <ul>
+                            <li><a href="/contact/aboutUs">Acerca de Techlogic.store</a></li>
+                            <li><a href="/contact/payment">Métodos de Pago</a></li>
+                            <li><a href="/contact/questions">Preguntas frecuentes</a></li>
+                            <li><a href="/contact/info">Soporte al Cliente</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <% if (locals.userLogged) { %> 
+                    <% if ((locals.userLogged.rolId == 1)) { %>
+                        <li class="options-navbar-slide-menu">
+                            <div class="option-navbar-with-icon" id="contact-option-slide-menu">
+                                <a href="#" id="admin-slide">Admin</a>
+                                <i class="fa-solid fa-plus"></i>
+                                <i class="fa-solid fa-minus icono-menos-slide-menu"></i>
+                            </div>
+                            
+                            <!-- MENÚ QUE SE DESPLIEGA DE LA OPCIÓN CONTACTO -->
+                            <div class="admin-option-slide second-navbar-slide-menu" id="second-navbar-contact-option-slide-menu">
+                                <ul>
+                                    <li><a href="/products/create">Crear producto</a></li>
+                                    <li><a href="http://localhost:3000/">Dashboard</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                <% } %> 
+                <% } %>
+
+            </ul>
+
+        </nav>
+
+        <!-- PIE DE PÁGINA DEL SLIDE-MENU -->
+        <footer class="footer-slide-menu">
+
+            <!-- PERFIL DEL USUARIO EN EL SLIDE-MENU DE LA VERSIÓN MOBILE -->
+            <div class="profile-slide-menu">
+
+                <% if (!locals.isLogged) { %>
+
+                    <!-- PERFIL DEL USUARIO SI NO HA INICIADO SESIÓN -->
+                    <div class="profile-slide-menu-empty">
+                        <a href="/users/login">Iniciar Sesión</a>
+                        <a href="/users/register">Regístrate</a>
+                    </div>
+
+                <% } else { %>
+
+                    <!-- PERFIL DEL USUARIO SI YA INICIÓ SESIÓN -->
+                    <div class="profile-slide-menu-full">
+                        <div class="img-slider-menu">
+                            <img src="/img/users/<%= locals.userLogged.image %>" alt="Foto de perfil del usuario">
+                        </div>
+                        <p><%= locals.userLogged.name %> <%= locals.userLogged.lastName %></p>
+                    </div>
+                
+                <% } %>
+
+            </div>
+
+            <!-- REDES SOCIALES EN EL SLIDE-MENU DE LA VERSIÓN MOBILE -->
+            <div class="social-media-slide-menu">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+
+        </footer>
+
+    </div>
+
+</header>

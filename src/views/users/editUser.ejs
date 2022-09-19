@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- HEAD -->
+    <%- include('../partials/head', {title: 'Editar Usuario: ' + user.email, stylesheet: 'users/editUser.css'}) %>
+    
+    <body>
+
+        <!-- HEADER -->
+        <%- include('../partials/header') %>
+
+        <!-- MAIN -->
+        <main class="editUser-main">
+            <!-- ---------------------SECCION EDICIÓN DE USUARIO--------------------- -->
+            <section class="section-editUser">
+                <!-- ---------------------FORM EDICIÓN DE USUARIO--------------------- -->
+                <form action="/users/userProfile/edit?_method=PUT" method="POST" enctype="multipart/form-data" class="editUser-form" id="editUser-form">
+                    
+                    <h3 class="editUser-title">EDICIÓN DE USUARIO</h3>
+
+                    <!-- IMAGEN DE PERFIL -->
+                    <% if (locals.errors && errors.image) { %>
+                        <span class="text-danger"><%= errors.image.msg %></span> 
+                    <% } %>   
+                    <div class="upload-image-user <%= locals.errors && errors.image? 'is-invalid' : null %>">
+                        <div class="user-profile-icon">
+                            <img src="/img/users/<%= user.image %>" class='profileImage' id="profileImage">
+                        </div>
+                        <label for="image"><i class="fas fa-camera upload-icon"></i></label>
+                        <input type="file" name="image" id="image" class="input-image" accept="image/*"/>
+                    </div>
+
+                    <!-- NOMBRE -->
+                    <% if (locals.errors && errors.name) { %>
+                        <span class="text-danger"><%= errors.name.msg %></span> 
+                    <% } %>
+                    <input type="text" name="name" id="name" placeholder="Nombre" class="editUser-form-item <%= locals.errors && errors.name ? 'is-invalid' : null %>" value="<%= locals.oldData && oldData.name ? oldData.name : user.name %>"/>
+                    
+                    <!-- APELLIDO -->
+                    <% if (locals.errors && errors.lastName) { %>
+                        <span class="text-danger"><%= errors.lastName.msg %></span> 
+                    <% } %>
+                    <input type="text" name="lastName" id="lastName" placeholder="Apellido" class="editUser-form-item <%= locals.errors && errors.lastName ? 'is-invalid' : null %>" value="<%= locals.oldData && oldData.lastName ? oldData.lastName : user.lastName %>"/>
+                    
+                    <!-- CONTRASEÑA -->
+                    <% if (locals.errors && errors.password) { %>
+                        <span class="text-danger"><%= errors.password.msg %></span> 
+                    <% } %>
+                    <input type="password" name="password" id="password" placeholder="Contraseña" class="editUser-form-item <%= locals.errors && errors.password ? 'is-invalid' : null %>"/>
+
+                    <!-- EMAIL DEL USUARIO -->
+                    <p class="editUser-rol">Email: <%= user.email%></p>
+                    
+                    <!-- ROL DEL USUARIO -->
+                    <p class="editUser-rol">Rol: Admin</p>
+
+                    <!-- -----------------ERRORES DE VALIDACIÓN FRONT-END----------------- -->
+                    <ul class="errors-frontEnd"></ul>
+                    
+                    <!-- ---------------------BOTON PARA ENVIAR--------------------- -->
+                    <div class="button-cart-div button-editUser">
+                        <button type="submit" class="btn btn-secondary">Editar</button>
+                    </div>
+
+                </form>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <%- include('../partials/footer') %>
+
+        <script src="/js/previewUserImage.js" crossorigin="anonymous"></script>
+        <script src="/js/validationEditUser.js" crossorigin="anonymous"></script>
+    </body>
+
+</html>

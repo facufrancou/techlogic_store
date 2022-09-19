@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- HEAD -->
+  <%- include('../partials/head', {title: 'Registrate', stylesheet:
+  'users/loginRegister.css'}) %>
+
+  <body class="body-register-login">
+    <!-- HEADER -->
+    <%- include('../partials/header') %>
+
+    <!-- MAIN -->
+    <main class="main-register">
+      <!-- ---------------------SECCION REGISTRO--------------------- -->
+      <section class="container col-md-8 register-login-box">
+        <!-- ---------------------FORM REGISTRO--------------------- -->
+        <form action="/users/register" method="POST" enctype="multipart/form-data" class="container col-md-8 register-login-form" id="register-form">
+          <h3 class="register-login-text">REGISTRATE</h3>
+
+          <% if (locals.errors && errors.image) { %>
+            <span class="text-danger"><%= errors.image.msg %></span> 
+          <% } %>   
+          <!-- ---------------------IMAGEN DE PERFIL--------------------- -->
+          <div class="upload-image-user <%= locals.errors && errors.image? 'is-invalid' : null %>">
+            <div class="user-profile-icon">
+              <img src="/img/users/<%= locals.oldImage ? oldImage : 'usuario-predeterminado.png' %>" 
+              class='profileImage' 
+              id="profileImage">
+            </div>
+            <label for="image"><i class="fas fa-camera upload-icon"></i></label>
+            <input 
+              type="file" 
+              name="image" 
+              id="image" 
+              class="input-image"
+              value="<%= locals.oldImage ? oldImage : null %>"
+              accept="image/*"
+            />
+          </div>
+          <% if (locals.errors && errors.name) { %>
+            <span class="text-danger"><%= errors.name.msg %></span> 
+          <% } %>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Nombre"
+            class="register-login-form-item <%= locals.errors && errors.name ? 'is-invalid' : null %> "
+            value="<%= locals.oldData && oldData.name ? oldData.name : null %>"
+          />
+          <% if (locals.errors && errors.lastName) { %>
+            <span class="text-danger"><%= errors.lastName.msg %></span> 
+          <% } %>
+          <input
+            type="text"
+            name="lastName"
+            id="lastName"
+            placeholder="Apellido"
+            class="register-login-form-item <%= locals.errors && errors.lastName ? 'is-invalid' : null %> "
+            value="<%= locals.oldData && oldData.lastName ? oldData.lastName : null %>"
+          />
+          <% if (locals.errors && errors.email) { %>
+            <span class="text-danger"><%= errors.email.msg %></span> 
+          <% } %>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder="E-mail"
+            class="register-login-form-item <%= locals.errors && errors.email ? 'is-invalid' : null %> "
+            value="<%= locals.oldData && oldData.email ? oldData.email : null %>"
+          />
+         
+          <% if (locals.errors && errors.password) { %>
+            <span class="text-danger"><%= errors.password.msg %></span> 
+          <% } %>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Contraseña"
+            class="register-login-form-item <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+
+          />
+          
+          <!-- ---------------------TERMINOS Y CONDICIONES--------------------- -->
+          <% if (locals.errors && errors.termsConditions) { %>
+            <span class="text-danger"><%= errors.termsConditions.msg %></span> 
+          <% } %>
+          <div class="terms-conditions" >
+            <input type="checkbox" name="termsConditions" id="terms-conditions" />
+            <label for="terms-conditions"
+              >Aceptar <a href="#">Terminos y condiciones</a></label
+            >
+          </div>
+
+          <!-- -----------------ERRORES DE VALIDACIÓN FRONT-END----------------- -->
+          <ul class="errors-frontEnd"></ul>
+
+          <!-- ---------------------BOTON PARA ENVIAR--------------------- -->
+          <div class="button-cart-div button-login-register">
+            <button type="submit" class="btn btn-secondary" id="register-button">Registrarse</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <%- include('../partials/footer') %>
+    <script src="/js/previewUserImage.js" crossorigin="anonymous"></script>
+    <script src="/js/validationRegister.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

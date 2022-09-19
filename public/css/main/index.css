@@ -1,0 +1,149 @@
+@import url(../styles.css);
+@import url(../partials/header.css);
+@import url(../partials/footer.css);
+
+#main-banner{
+    background-color: rgb(255, 255, 255);
+    padding-top: 20px;
+}
+
+.title-collections{
+    position: absolute;
+    z-index: 2;
+    color: aliceblue;
+    top: 5%;
+    left: 30%;
+}
+#banner-collection{
+    position: relative;
+}
+.main-banner {
+
+  width: 100%;
+  height: 100%;
+}
+
+/* CARRUSEL DEL BANNER PRINCIPAL */
+.carousel {
+    width: 100%;
+    height: 100%;
+}
+
+/* IMÁGENES DEL CARRUSEL DEL BANNER PRINCIPAL */
+.carousel-inner .carousel-item img {
+    width: 100%;
+  height: 100%;
+}
+
+/* SECCIÓN INFO TECHLOGIC.STORE */
+.info-company-section {
+    padding: 30px;
+    height: 400px;
+    position: relative;
+}
+
+/* MAPA DE LA SECCIÓN INFO TECHLOGIC.STORE */
+.map-info-company-section {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: opacity 450ms;
+    border: none;
+}
+
+.capa-superior-img-info-company-section:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.squarts-info-section {
+    position: absolute;
+    right: 3%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 3;
+}
+
+/* CUADROS DE INFO DE LA SECCIÓN INFO COMPANY */
+.info-squart-info-section {
+    width: 50vw;
+    background-color: var(--azul-marino);
+    box-shadow: 10px 5px 5px var(--negro);
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+}
+
+.info-squart-info-section:last-child {
+    margin-bottom: 0;
+}
+
+/* TÍTULO CUADROS DE INFO DE LA SECCIÓN INFO COMPANY */
+.title-info-company-section {
+    color: var(--blanco);
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+/* P DE LOS CUADROS DE INFO DE LA SECCIÓN INFO COMPANY */
+.p-info-company-section {
+    color: var(--blanco);
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+/* MEDIA QUERIES  */
+
+/* MEDIA QUERIES TABLETS */
+@media (min-width: 768px) {
+
+    /* ----------------------  BANNER PRINCIPAL  ---------------------- */
+    .main-banner {
+        height: 75%;
+    }
+
+    .carousel {
+        height: 75%;
+    }
+    
+    .carousel-inner .carousel-item img {
+        height: 75%;
+    }
+
+   
+}
+
+/* MEDIA QUERIES DESKTOPS */
+@media (min-width: 1050px) {
+
+    /* ----------------------  BANNER PRINCIPAL  ---------------------- */
+    .main-banner {
+        width: 100%;
+        height: 100%;
+        /* height: 100vh; */
+        margin-top: 0;
+    }
+
+    .carousel {
+        width: 100%;
+        height: 100vh;
+    }
+    
+    .carousel-inner .carousel-item img {
+        width: 100%;
+        height: 100vh;
+    }
+    .info-squart-info-section {
+        width: 20vw;
+    }
+
+   }

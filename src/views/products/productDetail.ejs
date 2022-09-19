@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- HEAD -->
+  <%- include('../partials/head', {title: 'Detalle Producto', stylesheet: 'products/productDetail.css'}) %>
+
+  <body>
+
+    <!-- HEADER -->
+    <%- include('../partials/header') %>
+
+    <!-- MAIN -->
+    <main class="main-productDetail">
+      <div class="main-product-detail">
+        <div class="image-cnt-product-detail">
+            <div class="slider">
+
+              <!-- CARRUSEL DEL BANNER PRINCIPAL -->
+              <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="true">
+
+                <!-- INDICADORES DEL CARRUSEL -->
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+                <!-- IMÁGENES DEL CARRUSEL -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="/img/products/<%= product.image %>" class="d-block w-50 image-carousel" alt="<%= product.name %>">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/img/products/<%= product.image %>" class="d-block w-50 image-carousel" alt="<%= product.name %>">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/img/products/<%= product.image %>" class="d-block w-50 image-carousel" alt="<%= product.name %>">
+                  </div>
+                </div>
+
+                <!-- FLECHAS DEL CARRUSEL -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+
+          <div class="cnt-product-detail">
+            <div>
+              <div class="prd-name-general"><p>Sección <%= product.sections.sectionName %></p></div>
+              <div class="prd-name"><p><%= product.name %></p></div>
+              <div class="prd-price"><p>$<%= product.price %></p></div>
+
+              <div class="prd-stars">
+                <div>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <div>
+                  <p class="prd-star-text">5 reseñas</p>
+                </div>
+              </div>
+              <div class="prd-buy-cnt">
+              </div>
+              <br>
+              <form action="/products/addProduct/<%= product.id %>" method="POST">
+                <button class="btn btn-secondary">Agregar al carrito<i class="fa-solid fa-cart-arrow-down"></i></button>
+              </form>
+              <!-- Si existe usuario logueado y es admin muestra el boton de EDITAR PRODUCTO -->
+              <% if (user) {%>
+                <% if (user.rolId == 1) {%>
+                  <br>
+                  
+                  <div>
+                    <form action="/products/edit/<%= product.id %> " method="GET">
+                        <button class="btn btn-secondary">Editar producto</i></button>
+                    </form>
+                  </div>
+                <% } %>
+              <% } %>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="collapse-product-details">
+            <button class="prd-features" id="description-collapse-title-products-details">
+              <p>Especificaciones / Descripción</p>
+              <div class="div-props">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </button>
+
+            <div class="collapse-body-product-details description-collapse-body-product-details" id="description-collapse-body-products-details">
+              <p><%= product.description %></p>
+            </div>
+          </div>
+
+          <div class="collapse-product-details">
+            <button class="prd-features" id="payment-collapse-title-products-details">
+              <p>Medios de Pago y Envío</p>
+              <div class="div-props">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </button>
+            <div class="collapse-body-product-details payment-collapse-body-product-details" id="payment-collapse-body-products-details">
+              <div class="card-container">
+                <div class="card" style="width: 18rem;">
+                    <img src="/img/iconos/transferencia.png" class="card-img-top" alt="transferencia">
+                    <div class="card-body">
+                        <h3 class="card-text">Transferencia bancaria</h3>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="/img/iconos/cartera.png" class="card-img-top" alt="tarjetas">
+                    <div class="card-body">
+                        <h3 class="card-text">Tarjetas de débito o crédito</h3>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="/img/iconos/mercado-pago.png" class="card-img-top " alt="mercado pago">
+                    <div class="card-body">
+                        <h3 class="card-text">MercadoPago</h3>
+                    </div>
+                </div>
+            </div>
+            </div>
+          </div>
+
+          <div class="collapse-product-details">
+            <button class="prd-features prd-features-reviews" id="reviews-collapse-title-products-details">
+              <p>Reseñas</p>
+              <div class="div-props">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+            </button>
+            <div class="collapse-body-product-details reviews-collapse-body-product-details" id="reviews-collapse-body-products-details">
+              <form action="#" method="POST" class="form-reviews-collapse-body-product-details">
+                <textarea name="review" id="review-product-details" placeholder="Escribe tu reseña..." class="textarea-reviews-collapse-body-product-details"></textarea>
+                <button type="submit" class="button-cart button-reviews-collapse-body-product-details">Enviar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--------- SECCION OFERTAS | TE PUEDE INTERESAR --------->
+      <section class="seccion-product-plus">
+        <h3 class="h3-seccion-plus">También te puede interesar...</h3>
+        <div class="products-plus">
+
+          <% for (let similarProduct of similarProducts) { %>
+            <div class="images-products-plus">
+              <div class="product-plus">
+                <img
+                  src="/img/products/<%= similarProduct.image %>"
+                  alt="<%= similarProduct.name %>"
+                  class="img-product-plus"
+                />
+                <div class="info-product-plus">
+                  <p class="title-product-plus"><%= similarProduct.name %></p>
+                  <p class="price-product-plus">$<%= similarProduct.price %></p>
+                  <p class="description-product-plus"><%= similarProduct.name %></p>
+                </div> 
+              </div>
+            </div>
+          <% } %>
+          
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <%- include('../partials/footer') %>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

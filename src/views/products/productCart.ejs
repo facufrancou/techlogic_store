@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- HEAD -->
+  <%- include('../partials/head', {title: 'Mi Carrito', stylesheet:
+  'products/productCart.css'}) %>
+
+  <body>
+    <!-- HEADER -->
+    <%- include('../partials/header') %>
+
+    <!-- MAIN -->
+    <main class="main-cart">
+
+      <!-- TÍTULO DE LA VISTA -->
+      <div class="my-cart">
+        <h3><i class="fa-solid fa-cart-shopping cart"></i> Mi Carrito</h3>
+      </div>
+      
+      <!------- SECCION CARRITO Y CIERRE DE CARRITO ----------->
+      <div class="total-cart">
+        <!-------- LISTA DE PRODUCTOS EN EL CARRITO ------>
+        <section class="list-product">
+
+          <% for (let product of products) { %>
+
+          <article class="articles">
+            <div class="item-cart">
+              <div class="div-img-art">
+                <a href="/products/productDetail/<%= product.id %>"><img
+                  class="img-article"
+                  src="/img/products/<%= product.image %>"
+                  alt="<%= product.name %>"
+                /></a>
+                <form action="/products/productCart/<%= product.id %>" method="POST" >
+                   <button type="submit" class="eliminar-producto">Eliminar</button>
+                </form>
+              </div>
+              <div>
+                <ul class="product-detail-cart">
+                  <li class="title-product"><a href="/products/productDetail/<%= product.id %>"><%= product.name %></li></a>
+                  <li>Sección <%= product.sections.sectionName %></li>
+                  <li><%= product.description %></li>
+                </ul>
+              </div>
+              <div>
+                <ul class="add-item">
+                  <li>$ <%= product.price %></li>
+                  <div class="add-item-icons">
+                    <div>
+                      <a href="#"
+                        ><i class="fa-solid fa-angles-left icon-cant"></i
+                      ></a>
+                    </div>
+                    <li class="cantidad">1</li>
+                    <div>
+                      <a href="#"
+                        ><i class="fa-solid fa-angles-right icon-cant"></i
+                      ></a>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </article>
+          <% } %>
+        </section>
+
+        <!-------------- SECCION CIERRE DE CARRITO ----------------->
+        <section class="close-cart">
+          <div class="title-close">
+            <h3>Total Compra</h3>
+          </div>
+          <div class="liqu">
+            <ul class="ul-close-cart left">
+              <li class="li-close-cart">Subtotal</li>
+              <li class="li-close-cart">Impuesto</li>
+              <li class="li-close-cart"><p>Monto Total</p></li>
+            </ul>
+            <ul class="ul-close-cart right">
+              <li class="li-close-cart">$ <%= subtotalPurchase %> </li>
+              <li class="li-close-cart">$ <%= taxes %> </li>
+              <li class="li-close-cart">$ <%= totalPurchase %> </li>
+            </ul>
+          </div>
+          <div class="button-cart-div">
+            <form action="/products/productCart/buy" method="GET">
+              <button class="btn btn-secondary">Comprar</button>
+            </form>
+          </div>
+        </section>
+      </div>
+      <!--------- SECCION OFERTAS | TE PUEDE INTERESAR --------->
+      <section class="seccion-product-plus">
+        <h3 class="h3-seccion-plus">También te puede interesar...</h3>
+        <div class="products-plus">
+          
+          <% for (let similarProduct of similarProducts) { %>
+            <div class="images-products-plus">
+              <div class="product-plus">
+                <img
+                  src="/img/products/<%= similarProduct.image %>"
+                  alt="<%= similarProduct.name %>"
+                  class="img-product-plus"
+                />
+                <div class="info-product-plus">
+                  <p class="title-product-plus"><%= similarProduct.name %></p>
+                  <p class="price-product-plus"><%= similarProduct.price %></p>
+                  <p class="description-product-plus"><%= similarProduct.name %></p>
+                </div>
+              </div>
+            </div>
+          <% } %>
+          
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <%- include('../partials/footer') %>
+  </body>
+</html>

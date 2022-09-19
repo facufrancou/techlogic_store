@@ -1,0 +1,64 @@
+/* ----------------------ROOT DE COLORES---------------------- */
+:root{
+    --azul-marino: #03254E;
+    --gris: #494949;
+    --celeste: #43E9F1;
+    --blanco: #FFFFFF;
+    --negro: #000000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
+    background: linear-gradient(to top,#000000, #434343, #000000);
+}
+main{
+    margin-top: 50px;
+}
+
+.button-cart {
+    display: block;
+    background-color: var(--azul-marino);
+    color: var(--blanco);
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    padding: 15px 25px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition-property: background-color, color;
+    transition-duration: 0.5s;
+}
+
+.button-cart:hover {
+    background-color: var(--celeste);
+    color: var(--azul-marino);
+}
+  
+  .button-cart-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+}
+.btn-secondary{
+    display: block;
+    margin: auto;
+    background-color: var(--azul-marino);
+    color: var(--blanco);
+}
+.btn-secondary:hover {
+    background-color: var(--celeste);
+    color: var(--azul-marino);
+}

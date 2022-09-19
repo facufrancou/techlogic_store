@@ -1,0 +1,210 @@
+@import url(../styles.css);
+@import url(../partials/header.css);
+@import url(../partials/footer.css);
+@import url(../products/productCart.css);
+
+/* ---------------------FONDO PARA EL BODY--------------------- */
+
+.body-register-login{
+  background-color: black;
+}
+
+/* ---------------------CAJA DE REGISTER--------------------- */
+.register-login-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70vw;
+  margin: auto;
+  margin-bottom: 25vw;
+  margin-top: 30vw;
+  background: linear-gradient(to top, var(--negro), var(--azul-marino));
+  border-radius: 10px;
+  flex-wrap: wrap;
+  z-index: 1;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+/* ---------------------TEXTO "REGISTRARSE"--------------------- */
+.register-login-text {
+  color: var(--blanco);
+  text-align: center;
+  margin: 30px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+/* ---------------------IMAGEN DE PERFIL--------------------- */
+.user-profile-picture {
+  margin-bottom: 15px;
+  width: 25vw;
+}
+
+.user-profile-icon{
+  font-size: 180px;
+  color:var(--blanco) ;
+}
+
+.profileImage {
+  width: 200px
+}
+
+/* ---------------------FORMULARIO DE REGISTRO--------------------- */
+.register-login-form {
+  display: flex;
+  flex-direction: column;
+}
+/* ---------------------CARGA DE IMAGEN DE PERFIL--------------------- */
+.upload-image-user{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  border: solid 1px var(--blanco);
+  border-radius: 10px;
+}
+.input-image{
+  display: none;
+}
+.upload-icon{
+  font-size: 30px;
+  color: var(--blanco);
+  margin-left: 200px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.upload-icon:hover{
+  color: var(--celeste);
+}
+/* ---------------------INPUTS DEL FORMULARIO--------------------- */
+.register-login-form-item {
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 1px solid gray;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+/* ---------- ELECCION DE PERFIL DE USUARIO----------------------- */
+.user-profile-text{
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+#profile-user{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+/* ---------------------TERMINOS Y CONDICIONES--------------------- */
+.terms-conditions{
+  margin-bottom: 15px;
+  margin-top: 15px;
+  color: var(--blanco);
+}
+
+.terms-conditions a {
+  color: var(--celeste);
+  font-weight: 600;
+  transition: opacity 450ms;
+}
+
+.terms-conditions a:hover {
+  opacity: 0.8;
+}
+
+/* ---------------------LINK A REGISTRARSE Y OLVIDE MI CONTRASEÑA"--------------------- */
+.links-register-password{
+  display: flex;
+  justify-content: space-between;
+}
+
+.links-register-password p {
+  margin-left: 0.75rem;
+  margin-top:20px ;
+  padding-right: 0.75rem;
+  color: var(--blanco);
+
+}
+
+.links-register-password p a {
+  color: var(--celeste);
+  font-weight: 600;
+  transition: opacity 450ms;
+}
+
+.links-register-password p a:hover {
+  opacity: 0.8;
+}
+
+/* ---------------------BOTON DE "REGISTRARSE" E "INICIAR SESIÓN" --------------------- */
+
+.button-login-register {
+  margin-bottom: 30px;
+}
+
+/* ---------------------RECORDAR USUARIO--------------------- */
+
+.user-save{
+  margin-bottom: 25px;
+  margin-top: 15px;
+  margin: auto;
+  margin-top: 10px;
+  color: var(--blanco);
+  font-size: 1rem;
+}
+
+/* ---------------------MARCO FEEDBACK DE LOS INPUT CON ERROR--------------------- */
+.is-invalid {
+  border: 2px solid red;
+  box-shadow: 0 0 7px red;
+}
+
+.is-valid {
+  border: 2px solid rgb(57, 255, 47);
+  box-shadow: 0 0 7px rgb(57, 255, 47);
+}
+
+/* ---------------------ESTILOS DE LOS ERRORES DEL FEEDBACK DE LA VALIDACIÓN FRONT-END--------------------- */
+.errors-frontEnd {
+  margin: 1.5rem 0;
+  list-style-type: circle;
+}
+
+.alert-warning {
+  color: red;
+  font-size: 1rem;
+}
+
+/* ---------------------MEDIA QUERIES TABLET--------------------- */
+@media (min-width: 768px) {
+  .user-profile-picture {
+    width: 23vw;
+  }
+  .register-login-box {
+    width: 60vw;
+    margin-bottom: 20vw;
+  }
+  .register-login-box {
+    top: 15vw;
+    width: 45vw;
+  }
+}
+/* ---------------------MEDIA QUERIES DESKTOP--------------------- */
+@media (min-width: 1050px) {
+  .user-profile-picture {
+    width: 19vw;
+  }
+  .register-login-box {
+    top: 15vw;
+    width: 35vw;
+    margin-bottom: 10vw;
+    margin-top: 10vw;
+  }
+}
+/* ---------------------MEDIA QUERIES DESKTOP++--------------------- */
+@media (min-width: 1200px) {
+  .user-profile-picture {
+    width: 13vw;
+  }
+}

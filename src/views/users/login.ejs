@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- HEAD -->
+    <%- include('../partials/head', {title: 'Iniciar Sesión', stylesheet: 'users/loginRegister.css'}) %>
+
+    <body class="body-register-login">
+
+        <!-- HEADER -->
+        <%- include('../partials/header') %>
+
+        <!-- MAIN -->
+        <main class="main-register-login">
+        <!-- ---------------------SECCION REGISTRO--------------------- -->
+        <section class="register-login-box">
+            <h3 class="register-login-text">INICIAR SESIÓN</h3>
+            <!-- ---------------------IMAGEN DE PERFIL--------------------- -->
+            <div class="user-profile-icon">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <!-- ---------------------FORM LOGIN--------------------- -->
+            <form action="/users/login" method="POST" class="container col-md-8 register-login-form" id="login-form">
+            <% if (locals.errors && errors.email) { %>
+                <span class="text-danger"><%= errors.email.msg %></span> 
+            <% } %>
+            <input
+                type="text"
+                name="email"
+                id="email"
+                placeholder="Email"
+                class="register-login-form-item <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+            />
+            <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Contraseña"
+                class="register-login-form-item <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+            />
+            <!-- ---------------------RECORDAR USUARIOS--------------------- -->
+            <div class="user-save">
+                <input type="checkbox" name="remember_user" id="remember_user" />
+                <label for="remember_user"
+                >Recordar usuario</label
+                >
+            </div>
+            <!-- ---------------------NO TENGO CUENTA Y OLVIDE MI CONTRASEÑA--------------------- -->
+            <div class="links-register-password">
+                <p><a href="/users/register">No tengo cuenta</a></p>
+                <p><a href="#">Olvidé mi contraseña</a></p>
+            </div>
+
+            <!-- -----------------ERRORES DE VALIDACIÓN FRONT-END----------------- -->
+            <ul class="errors-frontEnd"></ul>
+
+            <!-- ---------------------BOTON PARA INICIAR SESION--------------------- -->
+            <div class="button-cart-div button-login-register">
+                <form action="/" method="POST">
+                    <button type="submit" class="btn btn-secondary">
+                        Iniciar sesión
+                    </button>
+                </form>
+            </div>
+            </form>
+        </section>
+        </main>
+
+        <!-- FOOTER -->
+        <%- include('../partials/footer') %>
+        <script src="/js/validationLogin.js" crossorigin="anonymous"></script>
+
+  </body>
+</html>

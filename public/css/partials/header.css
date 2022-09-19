@@ -1,0 +1,667 @@
+@import url(../styles.css);
+
+/* ----------------------  HEADER  ---------------------- */
+.main-header {
+    background-color: var(--negro);
+    width: 100vw;
+    padding: 26px;
+    border-bottom: 2px solid var(--gris);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+
+/* BARRA DE NAVEGACIÓN IZQUIERDA */
+.left-navbar {
+    width: 100%;
+    display: none;
+}
+
+.left-navbar ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* TODOS LOS ENLACES DENTRO DE LAS OPCIONES PRINCIPALES DE LA NAVBAR IZQUIERDA  */
+.options-left-navbar a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-weight: normal;
+    transition: opacity 450ms;
+    padding-bottom: 35px;
+}
+
+.options-left-navbar a:hover {
+    opacity: 0.6;
+    text-decoration: underline;
+}
+
+/* MENÚ DESPLEGABLE DE LAS OPCIONES PRINCIPALES DE LA BARRA DE NAVEGACIÓN IZQUIERDA */
+.second-left-navbar {
+    display: none;
+    position: absolute;
+    top: 100%;
+    /* background-color:rgb(199, 199, 199); */
+    background-color:var(--negro);
+    box-shadow: 10px 10px 10px var(--negro);
+    border-radius: 2%;
+    border: 1px solid white;
+    border-top: 3px solid var(--celeste);
+    padding: 17px;
+    margin-bottom: 0;
+    width: 18%;
+    max-width: 15rem;
+   
+}
+
+/* UL DENTRO DEL MENÚ SECUNDARIO DE LA BARRA DE NAVEGACIÓN IZQUIERDA */
+.second-left-navbar ul {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+/* LI U OPCIONES DEL MENÚ SECUNDARIO DE LA BARRA DE NAVEGACIÓN IZQUIERDA */
+.second-options-left-navbar{
+    display: block;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+/* ENLACES DENTRO DE LAS OPCIONES DEL MENÚ SECUNDARIO DE LA BARRA DE NAVEGACIÓN IZQUIERDA */
+.second-options-left-navbar a{
+    text-decoration: none;
+    text-transform: none;
+    color: var(--blanco);
+    font-size: 1rem;
+    transition: opacity 450ms;
+}
+
+.second-options-left-navbar a:hover {
+    opacity: 0.6;
+    background-size: 100% 2px;
+}
+
+/* OPCIONES DE LA NAVBAR IZQUIERDA QUE TENGAN UN ÍCONO AL LADO */
+.option-left-navbar-with-icon {
+    margin-right: 0;
+    padding-right: 10px;
+    margin-bottom: 0;
+    color: var(--blanco);
+}
+
+/* TODOS LOS ENLACES DENTRO DE LAS OPCIONES DE LA NAVBAR IZQUIERDA QUE TENGAN UN ÍCONO AL LADO */
+.option-left-navbar-with-icon a {
+    text-decoration: none;
+    color: var(--blanco);
+    margin-right: 1rem;
+}
+
+/* TODOS LOS ÍCONOS DENTRO DE LAS OPCIONES DE LA NAVBAR IZQUIERDA QUE TENGAN UN ÍCONO AL LADO */
+.option-left-navbar-with-icon i {
+    font-size: 1rem;
+    color: var(--blanco);
+}
+
+/* NAVBAR SECUNDARIAS DE LA NAVBAR IZQUIERDA QUE DESPLIEGAN UN MENÚ TERCIARIO */
+.second-options-left-navbar-with-third-navbar {
+    position: relative;
+}
+
+/* MENÚ DESPLEGABLE DE LAS OPCIONES SECUNDARIAS DE LA BARRA DE NAVEGACIÓN IZQUIERDA */
+.third-left-navbar {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 108%;
+    background-color:var(--negro);
+    box-shadow: 10px 10px 10px var(--negro);
+    border-radius: 2%;
+    border: 1px solid var(--blanco);
+    border-top: 3px solid var(--celeste);
+    padding-left: 15px;
+    padding-right: 20px;
+    padding-top: 10px;
+    width: 100%;
+    max-width: 12.5rem;
+}
+
+/* UL DENTRO DEL MENÚ TERCIARIO DE LA BARRA DE NAVEGACIÓN IZQUIERDA */
+.third-left-navbar ul {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+/* LI U OPCIONES DEL MENÚ TERCIARIO DE LA BARRA DE NAVEGACIÓN IZQUIERDA */
+.third-options-left-navbar{
+    display: block;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+/* ENLACES DENTRO DE LAS OPCIONES DEL MENÚ TERCIARIO DE LA BARRA DE NAVEGACIÓN IZQUIERDA */
+.third-options-left-navbar a{
+    text-decoration: none;
+    text-transform: none;
+    color: var(--blanco);
+    font-size: 1rem;
+    transition: opacity 450ms;
+}
+
+.third-options-left-navbar a:hover{
+    opacity: 0.6;
+}
+
+/* ÍCONO DE BURGER MENU */
+.burger-menu {
+    display: block;
+    width: 100%;
+    font-size: 1.5rem;
+    color: var(--blanco);
+    transition: opacity 450ms;
+}
+
+.burger-menu i:hover {
+    opacity: 0.6;
+}
+
+/* LOGO */
+.logo {
+    width: 100%;
+}
+
+
+.logo a img {
+    display: block;
+    margin: auto;
+    max-width: 126px;
+}
+
+/* BARRA DE NAVEGACIÓN DERECHA */
+.right-navbar {
+    width: 100%;
+}
+
+.right-navbar ul{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* DIV DE LOS ICONOS DE LA BARRA DE NAVEGACIÓN DERECHA */
+.icono-right-navbar {
+    padding: 0 0.4375rem;
+}
+
+/* DIV DEL PRIMER ÍCONO DE LA BARRA DE NAVEGACIÓN DERECHA */
+.icono-right-navbar:first-child {
+    padding-left: 0;
+}
+
+/* DIV DEL ÚLTIMO ÍCONO DE LA BARRA DE NAVEGACIÓN DERECHA */
+.icono-right-navbar:last-child {
+    padding-right: 0;
+}
+
+/* ÍCONOS DE LA BARRA DE NAVEGACIÓN DERECHA */
+.icono-right-navbar i {
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--blanco);
+    transition: opacity 450ms;
+}
+
+.icono-right-navbar i:hover {
+    opacity: 0.6;
+}
+
+/* ÍCONO DEL CARRITO YA QUE ES EL ÚNICO QUE SERÁ UN ENLACE*/
+.icono-right-navbar a i {
+    font-size: 1rem;
+    color: var(--blanco);
+}
+
+/* MENÚ QUE SE DESPLIEGA DEL ÍCONO DE USUARIO EN LA BARRA DE NAVEGACIÓN DERECHA CUANDO EL USUARIO YA INICIÓ SESIÓN */
+.profile-menu-full {
+    display: none;
+    position: absolute;
+    background-color: var(--negro);
+    top: 100%;
+    right: 15px;
+    width: 40%;
+    max-width: 17.5rem;
+    padding: 2rem 1rem 1.5rem 1rem;
+    border-top: 3px solid var(--celeste);
+}
+
+/* MOSTRAR EL MENU CUANDO SE PASA EL MOUSE POR ENCIMA DEL ÍCONO DE USUARIO */
+#li-user-icon {
+    padding-bottom: 36px;
+}
+
+/* IMAGEN DEL MENÚ DESPLEGABLE DEL ÍCONO DE USUARIO */
+.image-profile-menu {
+    display: block;
+    width: 4.5rem;
+    height: 4.5rem;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.image-profile-menu img {
+    width: auto;
+    height: 100%;
+    margin-left: -35%;
+}
+
+/* INFORMACIÓN DEL MENÚ DESPLEGABLE DEL ÍCONO DE USUARIO */
+.info-profile-menu {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-profile-menu p {
+    font-size: 0.875rem;
+    color: var(--blanco);
+    opacity: 0.7;
+    text-align: center;
+}
+
+.info-profile-menu p:first-child {
+    opacity: 1;
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+}
+
+/* ENLACE DEL MENÚ DESPLEGABLE DEL ÍCONO DE USUARIO */
+.link-profile-menu {
+    position: relative;
+}
+
+.link-profile-menu a {
+    text-decoration: none;
+    font-size: 0.875rem;
+    color: var(--celeste);
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    transition: opacity 450ms;
+}
+
+.link-profile-menu a:hover {
+    opacity: 0.7;
+}
+
+/* MENÚ QUE SE DESPLIEGA DEL ÍCONO DE USUARIO DE LA BARRA DE NAVEGACIÓN DERECHA CUANDO EL USUARIO NO HA INICIADO SESIÓN */
+.profile-menu-empty {
+    display: none;
+    position: absolute;
+    background-color: var(--negro);
+    top: 100%;
+    right: 0;
+    width: 40%;
+    max-width: 17.5rem;
+    padding: 2rem 1rem 1.5rem 1rem;
+    border-top: 3px solid var(--celeste);
+}
+
+/* ENLACE DEL MENÚ QUE SE DESPLIEGA DEL ÍCONO DE USUARIO DE LA BARRA DE NAVEGACIÓN DERECHA CUANDO ESTÁ VACÍO*/
+.profile-menu-empty a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--blanco);
+    font-weight: 600;
+    transition: color 450ms, opacity 450ms;
+}
+
+.profile-menu-empty a:hover {
+    color: var(--blanco);
+    opacity: 0.8;
+}
+
+/* BARRA DE BÚSQUEDA */
+.search-bar {
+    margin: 0;
+    display: none;
+    position: absolute;
+    width: 100%;
+    opacity: 1;
+    top: 110%;
+    left: 1%; 
+}
+
+/* INPUT SEARCH DE LA BARRA DE BÚSQUEDA */
+.search-bar input {
+    margin: auto;
+    box-shadow: 10px 10px 10px black;
+    background-color: rgb(218, 218, 218);
+    width: 100%;
+    padding: 10px;
+    margin: 0 4rem;
+    border: none;
+    border-radius: 5px;
+}
+
+/* DIV QUE CONTIENE A LOS ELEMENTOS QUE SE ENCUENTREN SOBRE LA BARRA DE BÚSQUEDA */
+.inside-search-bar-header {
+    width: 92%;
+    position: absolute;
+    top: 35%;
+    left: 3%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ÍCONOS EN LA BARRA DE BÚSQUEDA */
+.inside-search-bar-header i {
+    color: rgb(77, 77, 77);
+    font-size: 1.25rem;
+    text-shadow: 10px 10px 10px black;
+}
+
+/* ELIMINAR EL LABEL EN LA BARRA DE BÚSQUEDA CUANDO TENGA EL FOCO */
+.search-bar:focus-within .label-search-bar {
+    display: none;
+}
+
+/* BOTÓN X DE LA BARRA DE BÚSQUEDA */
+.button-X-search-bar {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    margin: 0;
+}
+
+/* SLIDE MENÚ DE LA VERSIÓN MOBILE */
+.slide-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--negro);
+    border: 3px solid var(--blanco);
+    width: 70vw;
+    max-width: 21.875rem;
+    padding: 1.25rem;
+    min-height: 88vh;
+}
+
+/* ÍCONO X DEL SLIDE MENÚ */
+.icono-x {
+    display: block;
+    color: var(--blanco);
+    opacity: 0.8;
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+/* LOGO DEL SLIDE MENÚ */
+.logo-slide-menu {
+    display: block;
+    margin: auto;
+    width: 6.25rem;
+    margin-bottom: 2rem;
+}
+
+/* BARRA DE NAVEGACIÓN DEL SLIDE MENÚ DE LA VERSIÓN MOBILE */
+.navbar-slide-menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* LI DE LA NAVBAR DEL SLIDE MENÚ */
+.options-navbar-slide-menu {
+    list-style: none;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* TODOS LOS ENLACES DENTRO DE LAS OPCIONES DE LA NAVBAR DEL SLIDE-MENU  */
+.options-navbar-slide-menu a{
+    text-decoration: none;
+    color: var(--blanco);
+    text-transform: uppercase;
+}
+
+/* TODOS LOS ÍCONOS DENTRO DE LAS OPCIONES DE LA NAVBAR DEL SLIDE-MENU */
+.options-navbar-slide-menu i {
+    color: var(--blanco);
+    cursor: pointer;
+}
+
+/* TODOS LOS ÍCONOS DE "-" EN LA NAVBAR DEL SLIDE-MENU */
+.icono-menos-slide-menu {
+    display: none;
+}
+
+/* TODAS LAS OPCIONES QUE TENGAN ÍCONOS AL LADO DE LA NAVBAR DEL SLIDE-MENU */
+.option-navbar-with-icon {
+    display: flex;
+    flex-wrap: none;
+    justify-content: space-between;
+}
+
+/* MENUS DESPLEGABLES DE LAS OPCIONES PRINCIPALES DE LA NAVBAR DEL SLIDE-MENU */
+.second-navbar-slide-menu {
+    margin: 1.5rem 0 0 1rem;
+    display: none;
+}
+
+/* TODOS LOS LI DE LA SEGUNDA NAVBAR DEL SLIDE-MENU */
+.second-navbar-slide-menu ul li {
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+/* TODOS LOS ENLACES DENTRO DE LOS LI DE LA SEGUNDA NAVBAR DEL SLIDE-MENU */
+.second-navbar-slide-menu ul li a {
+    text-transform: none;
+    opacity: 0.85;
+}
+
+/* MENÚS DESPLEGABLES DE LAS OPCIONES SECUNDARIAS DE LA NAVBAR DEL SLIDE-MENU */
+.third-navbar-slide-menu {
+    display: none;
+    margin: 1.5rem 0 0 1rem;
+}
+
+/* TODOS LOS LI DE LA TERCERA NAVBAR DEL SLIDE-MENU */
+.third-navbar-slide-menu ul li {
+    margin-bottom: 1rem;
+}
+
+/* TODOS LOS ENLACES DENTRO DE LOS LI DE LA TERCERA NAVBAR DEL SLIDE-MENU */
+.third-navbar-slide-menu ul li a {
+    text-transform: none;
+    opacity: 0.65;
+}
+
+/* FOOTER DEL SLIDE-MENU */
+.footer-slide-menu {
+    color: white;
+    width: 100%;
+    margin-top: 4rem;
+}
+
+/* DIV DEL PERFIL DEL USUARIO */
+.profile-slide-menu {
+    margin-bottom: 1rem;
+}
+
+/* DIV DEL PERFIL DEL USUARIO EN EL SLIDE-MENU SI NO HA INICIADO SESIÓN */
+.profile-slide-menu-empty {
+    display: block;
+}
+
+/* ENLACES DEL PERFIL DEL USUARIO EN SLIDE-MENU SI NO HA INICIADO SESIÓN */
+.profile-slide-menu-empty a{
+    display: block;
+    text-decoration: none;
+    font-size: 1rem;
+    color: var(--blanco);
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+/* DIV DEL PERFIL DEL USUARIO DEL SLIDE-MENU SI YA INICIÓ SESIÓN */
+.profile-slide-menu-full {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/* DIV DE LA IMAGEN DEL PERFIL DEL USUARIO DEL SLIDE-MENU SI YA INICIÓ SESIÓN */
+.img-slider-menu {
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+/* IMAGEN DEL PERFIL DEL USUARIO DEL SLIDE-MENU SI YA INICIÓ SESIÓN */
+.img-slider-menu img {
+    width: auto;
+    height: 100%;
+    margin-left: -32%;
+}
+
+/* NOMBRE DE USUARIO DEL PERFIL DEL USUARIO DEL SLIDE-MENU SI YA INICIÓ SESIÓN */
+.profile-slide-menu-full p {
+    padding-top: 1rem;
+    font-size: 1rem;
+    color: var(--blanco);
+    opacity: 0.8;
+}
+
+/* REDES SOCIALES EN EL SLIDE-MENU */
+.social-media-slide-menu {
+    width: 85%;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    padding-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ÍCONOS DE LAS REDES SOCIALES EN EL SLIDE-MENU */
+.social-media-slide-menu i {
+    font-size: 1rem;
+    color: var(--blanco);
+    cursor: pointer;
+    transition: opacity 450ms;
+}
+
+.social-media-slide-menu i:hover {
+    opacity: 0.7;
+}
+
+/* COLOCAR UNA CLASE QUE TENGA DISPLAY BLOCK */
+.active-slide-menu {
+    display: block;
+}
+
+/* MEDIA QUERIES */
+
+/* MEDIA QUERIES TABLETS */
+@media (min-width: 768px) {
+
+    /* ----------------------  BANNER PRINCIPAL  ---------------------- */
+    .main-banner {
+        height: 75vh;
+        margin-top: 0;
+    }
+
+    /* CÍRCULOS DE CAMBIO DE LA IMAGEN DEL BANNER PRINCIPAL */
+    .circles-main-banner {
+        left: 43%;
+    }
+
+    /* ----------------------  MAIN  ---------------------- */
+    /* PRIMER PRODUCTO DE LA SECCIÓN BEST SELLERS */
+    .product-best-seller:first-child {
+        margin-left: 8%;
+    }
+
+    /* PRIMER COLECCIÓN DE LA SECCIÓN COLECCIONES */
+    .collection:first-child {
+        margin-left: 8%;
+    }
+
+    /* SECCIÓN INFO TECHLOGIC.STORE */
+    .info-company-section {
+        padding-right: 4rem;
+    }
+
+}
+
+/* MEDIA QUERIES DESKTOPS */
+@media (min-width: 1050px) {
+
+    /* ----------------------  HEADER  ---------------------- */
+
+    /* BARRA DE NAVEGACIÓN IZQUIERDA */
+    .left-navbar {
+        display: block;
+    }
+
+    /* ÍCONO DE BURGER MENU */
+    .burger-menu {
+        display: none;
+    }
+
+    /* SLIDE MENÚ DE LA VERSIÓN MOBILE */
+    .slide-menu {
+        display: none;
+    }
+
+    /* CÍRCULOS DE CAMBIO DE LA IMAGEN DEL BANNER PRINCIPAL */
+    .circles-main-banner {
+        left: 45%;
+    }
+
+    /* ----------------------  MAIN  ---------------------- */
+    /* PRIMER PRODUCTO DE LA SECCIÓN BEST SELLERS */
+    .product-best-seller:first-child {
+        margin-left: 8%;
+    }
+
+    /* CADA PRODUCTO DE LA SECCIÓN BEST SELLERS */
+    .product-best-seller {
+        margin-left: 2.5rem;
+    }
+
+    /* PRIMER COLECCIÓN DE LA SECCIÓN COLECCIONES */
+    .collection:first-child {
+        margin-left: 2%;
+    }
+    .search-bar {
+       
+        width: 30%;
+        left: 69%;
+        
+    }
+
+   
+
+}
