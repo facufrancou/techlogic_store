@@ -1,4 +1,4 @@
-# grupo_1_techlogic.store
+# techlogic.store
 Proyecto Final DigitalHouse
 
 ## Temática y descripción del sitio
